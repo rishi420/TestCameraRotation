@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC1783811D5B047800F1FA3E /* NoRotatingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC1783801D5B047800F1FA3E /* NoRotatingView.xib */; };
+		BC1783851D5B544D00F1FA3E /* RotateButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BC1783841D5B544D00F1FA3E /* RotateButton.m */; };
 		BCD28DA61D5708BB00B2541B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD28DA51D5708BB00B2541B /* AppDelegate.swift */; };
 		BCD28DA81D5708BB00B2541B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD28DA71D5708BB00B2541B /* ViewController.swift */; };
 		BCD28DAB1D5708BB00B2541B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCD28DA91D5708BB00B2541B /* Main.storyboard */; };
@@ -15,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BC1783801D5B047800F1FA3E /* NoRotatingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoRotatingView.xib; sourceTree = "<group>"; };
+		BC1783831D5B544D00F1FA3E /* RotateButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RotateButton.h; sourceTree = "<group>"; };
+		BC1783841D5B544D00F1FA3E /* RotateButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RotateButton.m; sourceTree = "<group>"; };
 		BCD28DA21D5708BB00B2541B /* TestCameraRotation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestCameraRotation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCD28DA51D5708BB00B2541B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BCD28DA71D5708BB00B2541B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -35,6 +40,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BC1783821D5B544D00F1FA3E /* RotateButton */ = {
+			isa = PBXGroup;
+			children = (
+				BC1783831D5B544D00F1FA3E /* RotateButton.h */,
+				BC1783841D5B544D00F1FA3E /* RotateButton.m */,
+			);
+			path = RotateButton;
+			sourceTree = "<group>";
+		};
 		BCD28D991D5708BB00B2541B = {
 			isa = PBXGroup;
 			children = (
@@ -54,12 +68,14 @@
 		BCD28DA41D5708BB00B2541B /* TestCameraRotation */ = {
 			isa = PBXGroup;
 			children = (
+				BC1783821D5B544D00F1FA3E /* RotateButton */,
 				BCD28DA51D5708BB00B2541B /* AppDelegate.swift */,
 				BCD28DA71D5708BB00B2541B /* ViewController.swift */,
 				BCD28DA91D5708BB00B2541B /* Main.storyboard */,
 				BCD28DAC1D5708BB00B2541B /* Assets.xcassets */,
 				BCD28DAE1D5708BB00B2541B /* LaunchScreen.storyboard */,
 				BCD28DB11D5708BB00B2541B /* Info.plist */,
+				BC1783801D5B047800F1FA3E /* NoRotatingView.xib */,
 			);
 			path = TestCameraRotation;
 			sourceTree = "<group>";
@@ -125,6 +141,7 @@
 				BCD28DB01D5708BB00B2541B /* LaunchScreen.storyboard in Resources */,
 				BCD28DAD1D5708BB00B2541B /* Assets.xcassets in Resources */,
 				BCD28DAB1D5708BB00B2541B /* Main.storyboard in Resources */,
+				BC1783811D5B047800F1FA3E /* NoRotatingView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,6 +152,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC1783851D5B544D00F1FA3E /* RotateButton.m in Sources */,
 				BCD28DA81D5708BB00B2541B /* ViewController.swift in Sources */,
 				BCD28DA61D5708BB00B2541B /* AppDelegate.swift in Sources */,
 			);
@@ -253,6 +271,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.war.TestCameraRotation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -264,6 +283,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.war.TestCameraRotation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -286,6 +306,7 @@
 				BCD28DB61D5708BB00B2541B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
