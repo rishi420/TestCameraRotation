@@ -9,11 +9,11 @@
 import UIKit
 
 extension UIView {
-    class func loadFromNibNamed(nibNamed: String, bundle : NSBundle? = nil) -> UIView? {
+    class func loadFromNibNamed(_ nibNamed: String, bundle : Bundle? = nil) -> UIView? {
         return UINib(
             nibName: nibNamed,
             bundle: bundle
-            ).instantiateWithOwner(nil, options: nil)[0] as? UIView
+            ).instantiate(withOwner: nil, options: nil)[0] as? UIView
     }
 }
 
@@ -39,7 +39,7 @@ class ViewController: UIViewController {
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         
-        noRotatingView.center = CGPointMake(CGRectGetMidX(self.view.bounds), CGRectGetMidY(self.view.bounds));
+        noRotatingView.center = CGPoint(x: self.view.bounds.midX, y: self.view.bounds.midY);
         
         //Testing position
 //        
@@ -96,14 +96,14 @@ class ViewController: UIViewController {
 //    }
     
     
-    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         
-        let targetRotation = coordinator.targetTransform()
-        let inverseRotation = CGAffineTransformInvert(targetRotation)
+        let targetRotation = coordinator.targetTransform
+        let inverseRotation = targetRotation.inverted()
         
-        coordinator.animateAlongsideTransition({ (UIViewControllerTransitionCoordinatorContext) -> Void in
+        coordinator.animate(alongsideTransition: { (UIViewControllerTransitionCoordinatorContext) -> Void in
             
-            self.noRotatingView.transform = CGAffineTransformConcat(self.noRotatingView.transform, inverseRotation)
+            self.noRotatingView.transform = self.noRotatingView.transform.concatenating(inverseRotation)
             
             //self.noRotatingView.frame = self.view.bounds
 
@@ -112,8 +112,8 @@ class ViewController: UIViewController {
         }
     }
     
-    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
-        return .All
+    override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
+        return .all
     }
 
 }
